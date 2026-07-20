@@ -72,13 +72,9 @@ Expect HTTP 400 and an `InvalidInput` error mentioning the minimum.
 
 ## Deploying with Connect
 
-1. Push this repo to GitHub (already: `tomasz-miller/ct-agentic-connect`).
-2. In Merchant Center / Connect: create a Connector from the repo, deploy to the **same project** as zero-to-ct-storefront.
-3. Provide secured config: `CTP_PROJECT_KEY`, `CTP_CLIENT_ID`, `CTP_CLIENT_SECRET`, `CTP_SCOPE` (include `manage_extensions`).
-4. Optional standard config: `MIN_CART_CENT_AMOUNT`, `MIN_CART_CURRENCY`, `CTP_REGION`.
-5. After deploy, `post-deploy` registers the Extension. Cart updates below the minimum fail at the API (storefront BFF will surface the error).
+Step-by-step (local ngrok **or** Connect hosting): **[docs/DEPLOY.md](./docs/DEPLOY.md)**.
 
-Local tunnel alternative (before Connect deploy): expose `:8080` (ngrok/cloudflared), create the Extension manually or set `CONNECT_SERVICE_URL` and run `npm run connector:post-deploy`.
+Summary: create ConnectorStaged from this repo + git tag → deploy privately into the storefront Project → `post-deploy` registers Extension `ct-agentic-connect-cartUpdate`. Use a low `MIN_CART_CENT_AMOUNT` on shared demo projects so cheap sample SKUs still work.
 
 ## Wiring to zero-to-ct-storefront
 
