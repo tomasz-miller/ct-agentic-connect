@@ -8,7 +8,7 @@ import { cartController } from './cart.controller';
  * Expects ExtensionInput: { action, resource }.
  */
 export const post = async (request: Request, response: Response) => {
-  const { action, resource } = request.body;
+  const { action, resource } = request.body ?? {};
 
   if (!action || !resource) {
     throw new CustomError(400, 'Bad request - Missing body parameters.');
