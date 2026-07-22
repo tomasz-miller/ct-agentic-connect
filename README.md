@@ -74,6 +74,8 @@ Expect HTTP 400 and an `InvalidInput` error mentioning the minimum.
 
 Step-by-step (local ngrok **or** Connect hosting): **[docs/DEPLOY.md](./docs/DEPLOY.md)**.
 
+API Extensions are **API-only** — there is no Merchant Center screen to create or delete them. Register/remove via `post-deploy` / `pre-undeploy`, or call the [Extensions API](https://docs.commercetools.com/api/projects/api-extensions) (e.g. from **Settings → Developer settings → HTTP API Playground**).
+
 Summary: create ConnectorStaged from this repo + git tag → deploy privately into the storefront Project → `post-deploy` registers Extension `ct-agentic-connect-cartUpdate`. Use a low `MIN_CART_CENT_AMOUNT` on shared demo projects so cheap sample SKUs still work.
 
 ## Wiring to zero-to-ct-storefront

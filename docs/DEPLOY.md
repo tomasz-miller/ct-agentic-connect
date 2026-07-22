@@ -38,7 +38,7 @@ export CONNECT_SERVICE_URL="https://xxxx.ngrok-free.app/service"
 cd service && npm run build && npm run connector:post-deploy
 ```
 
-Or create Extension `ct-agentic-connect-cartUpdate` in Merchant Center → Settings → Developer settings → Extensions.
+API Extensions have no Merchant Center UI. Alternatively, create Extension key `ct-agentic-connect-cartUpdate` via the [Extensions API](https://docs.commercetools.com/api/projects/api-extensions) (e.g. **Settings → Developer settings → HTTP API Playground**).
 
 5. Smoke from the storefront: add a cheap line item so `totalPrice.centAmount` &lt; `MIN_CART_CENT_AMOUNT` — Cart update should fail with `InvalidInput`.
 
@@ -119,4 +119,4 @@ Use a dedicated Integration API client for Connect; do not reuse Frontend B2C cl
 ## Rollback
 
 - Connect: undeploy / uninstall the Deployment (runs `pre-undeploy` → deletes Extension).
-- Local: `npm run connector:pre-undeploy` or delete Extension in Merchant Center.
+- Local: `npm run connector:pre-undeploy`, or delete the Extension via the Extensions API / HTTP API Playground.
