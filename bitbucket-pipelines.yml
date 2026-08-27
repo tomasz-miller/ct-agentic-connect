@@ -1,0 +1,16 @@
+image: node:22
+
+pipelines:
+  branches:
+    main:
+      - step:
+          name: Lint, test, build
+          max-time: 10
+          caches:
+            - node
+          script:
+            - cd service
+            - npm ci
+            - npm run lint
+            - npm test
+            - npm run build

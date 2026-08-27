@@ -4,7 +4,7 @@
 
 Agentic PoC: a commercetools **Connect `service` application** that registers an **API Extension** on Cart Create/Update and enforces a configurable **minimum cart value**.
 
-Companion to [zero-to-ct-storefront](https://github.com/tomasz-miller/zero-to-ct-storefront) (same CT project later) and documented in [commercetools-agentic-playbook](https://github.com/tomasz-miller/commercetools-agentic-playbook).
+Companion to [zero-to-ct-storefront](https://github.com/tomasz-miller/zero-to-ct-storefront) ([Bitbucket](https://bitbucket.org/istonecrosscommerce/zero-to-ct-storefront); same CT project later) and documented in [commercetools-agentic-playbook](https://github.com/tomasz-miller/commercetools-agentic-playbook) ([Bitbucket](https://bitbucket.org/istonecrosscommerce/commercetools-agentic-playbook)).
 
 Built with the official [Connect TypeScript starter](https://docs.commercetools.com/connect/development) and intended to demonstrate the [`commercetools-connect`](https://docs.commercetools.com/dev-tooling/skills/commercetools-connect) skill surface.
 
@@ -84,6 +84,17 @@ No storefront code change is required for the rule to apply — Extensions run o
 
 - Map Extension `InvalidInput` messages to a clearer cart UI banner
 - Align `MIN_CART_CURRENCY` with the active market (DE→EUR, GB→GBP, US→USD) via separate deployments or a multi-currency rule later
+
+## Hosting
+
+GitHub is the source of truth and public portfolio (also the clone URL for commercetools Connect). Columbus keeps a private copy on Bitbucket; push day-to-day work to GitHub (`origin`). CI on `main` runs as Bitbucket Pipelines (`service/`: lint, test, build) once Pipelines are enabled on the repository.
+
+| | GitHub | Bitbucket |
+|--|--|--|
+| This repo | [tomasz-miller/ct-agentic-connect](https://github.com/tomasz-miller/ct-agentic-connect) | [istonecrosscommerce/ct-agentic-connect](https://bitbucket.org/istonecrosscommerce/ct-agentic-connect) |
+| zero-to-ct-storefront | [GitHub](https://github.com/tomasz-miller/zero-to-ct-storefront) | [Bitbucket](https://bitbucket.org/istonecrosscommerce/zero-to-ct-storefront) |
+| commercetools-agentic-playbook | [GitHub](https://github.com/tomasz-miller/commercetools-agentic-playbook) | [Bitbucket](https://bitbucket.org/istonecrosscommerce/commercetools-agentic-playbook) |
+| commerce-ai-tool | [GitHub](https://github.com/tomasz-miller/commerce-ai-tool) | [Bitbucket](https://bitbucket.org/istonecrosscommerce/commerce-ai-tool) |
 
 ## License
 
